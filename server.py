@@ -3,7 +3,6 @@ import os
 import json
 import requests
 from dotenv import load_dotenv
-from twilio.twiml.messaging_response import MessagingResponse
 load_dotenv()
 app = Flask(__name__)
 
