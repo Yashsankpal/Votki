@@ -3,7 +3,7 @@
   [
     {
       "tag": "greeting",
-      "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day","hi"],
+      "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day","hi", "Wass up buddy"],
       "responses": ["Hello", "Good to see you again", "Hi there, how can I help?"],
       "context": [""]
     },
@@ -21,7 +21,7 @@
     },
     {
       "tag": "noanswer",
-      "patterns": [" ","","fsdh sjdfhk"],
+      "patterns": [" ","","fsdh sjdfhk",],
       "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
       "context": [""]
     },

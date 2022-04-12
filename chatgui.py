@@ -86,7 +86,8 @@ def chatbot_response(msg):
           res = ",".join(data[i])
           ChatLog.insert(END,f"Bot: \n  {i}\n {res} \n\n")
     else:
-      ChatLog.insert(END,f"Bot: Sorry, nothing available  \n\n")
+      resp = intents['intents'][3]['responses']
+      ChatLog.insert(END,f"Bot: {random.choice(resp)}  \n\n")
   else:
     ChatLog.insert(END, f"Bot: {data} \n")
         
@@ -110,17 +111,17 @@ def send():
       chatbot_response(msg)
 
 base = Tk()
-base.title("Hello")
+base.title("Votki Bot")
 base.geometry("500x600")
 base.resizable(width=TRUE, height=TRUE)
 
 #Create Chat window
-ChatLog = Text(base, bd=0, bg="white", height="8", width="50", font="Arial",)
+ChatLog = Text(base, bd=0, bg="white", height="10", width="50", font="Arial",)
 
 ChatLog.config(state=DISABLED)
 
 #Bind scrollbar to Chat window
-scrollbar = Scrollbar(base, command=ChatLog.yview, cursor="heart")
+scrollbar = Scrollbar(base, command=ChatLog.yview)
 ChatLog['yscrollcommand'] = scrollbar.set
 
 #Create Button to send message
@@ -135,8 +136,8 @@ EntryBox = Text(base, bd=0, bg="white",width="29", height="4", font="Arial")
 
 #Place all components on the screen
 scrollbar.place(x=450,y=6, height=386)
-ChatLog.place(x=6,y=6, height=386, width=450)
-EntryBox.place(x=128, y=401, height=90, width=265)
-SendButton.place(x=6, y=401, height=90)
+ChatLog.place(x=6,y=6, height=500, width=450)
+EntryBox.place(x=128, y=500, height=90, width=265)
+SendButton.place(x=6, y=500, height=90)
 
 base.mainloop()
